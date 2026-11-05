@@ -22,7 +22,7 @@ const UserSchema = new Schema({
         required:true,
         unique:true
     },
-    refreshtoken:{
+    refreshToken:{
         type:String
     }
 })
