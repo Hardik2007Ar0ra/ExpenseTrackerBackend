@@ -1,5 +1,6 @@
 import express from "express"
 import cors from "cors"
+import cookieParser from "cookie-parser"
 
 const app=express()
 
@@ -12,5 +13,11 @@ app.get('/', (req,res)=>{
     console.log("running fine")
     res.send("setup complete")
 })
+
+app.use(cookieParser)
+
+import userRouter from "./routes/user.routes.js"
+
+app.use("/api/v1/users",userRouter)
 
 export default app;
